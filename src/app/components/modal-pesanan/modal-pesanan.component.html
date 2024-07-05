@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buat Pesanan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Tutup</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+    <ion-item>
+      <!-- <ion-label position="floating">Nama:</ion-label> -->
+      <ion-input label="Nama Pelanggan" label-placement="floating" formControlName="nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label position="floating" >No HP:</ion-label> -->
+      <ion-input label="No HP" label-placement="floating" formControlName="no_hp" type="tel" helperText="Contoh: 08123456789"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label position="floating">Alamat:</ion-label> -->
+      <ion-input label="Alamat" label-placement="floating" formControlName="alamat"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+      <!-- <ion-label position="floating">Layanan:</ion-label> -->
+        <ion-select label="Layanan" label-placement="floating" formControlName="id_layanan" interface="action-sheet" (ionChange)="calculateTotalPrice()">
+          <ion-select-option *ngFor="let layanan of layananOptions" [value]="layanan.id">{{ layanan.nama }} - {{ layanan.harga }}/{{ layanan.unit }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-item>
+      <ion-label position="floating">Jumlah:</ion-label>
+      <ion-input formControlName="jumlah" type="number" (ionChange)="calculateTotalPrice()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Total Harga:</ion-label>
+      <br>
+      <ion-input [value]="totalHarga" readonly></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="orderForm.invalid">Submit</ion-button>
+  </form>
+</ion-content>

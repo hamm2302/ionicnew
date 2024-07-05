@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Input Laporan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="submitLaporan($event)">
+    <ion-item>
+      <ion-input type="date" [(ngModel)]="tanggal" name="tanggal" required></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Buat Laporan</ion-button>
+  </form>
+</ion-content>

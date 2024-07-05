@@ -1,0 +1,277 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  // .header {
+  //   background: #E8B31F; /* Adjust color as needed */
+  //   color: #ffffff;
+  //   text-align: center;
+  //   padding: 20px;
+  //   border-bottom-left-radius: 40px; /* Creates the curved effect */
+  //   border-bottom-right-radius: 40px; /* Creates the curved effect */
+  //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+  // }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .header {
+    background: #092044; /* Adjust color as needed */
+    color: #ffffff;
+    padding: 20px;
+    padding-bottom: 80px; /* Adjust padding-bottom to ensure overlap */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+  } 
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .greeting {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .greeting p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  // .greeting h2 {
+  //   margin: 0;
+  //   font-size: 24px;
+  //   font-weight: bold;
+  // }
+  
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-icon {
+    font-size: 24px;
+    margin-right: 20px;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 20px;
+    background: #ffffff;
+    border-top-left-radius: 40px; /* Curved top corners of the content area */
+    border-top-right-radius: 40px; /* Curved top corners of the content area */
+    margin-top: -65px; /* Overlap the header slightly */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+  }
+  
+  .icon-card {
+    // background: linear-gradient(135deg, #c78800 0%, #00ADF0 100%);
+    // background: rgb(203,227,250);
+    // background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
+    // background-color: #0AA5DB;
+    // color: white;
+    // background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,32,68,1) 0%, rgba(69,113,182,1) 100%, rgba(9,32,68,1) 100%);
+    
+
+    // background: linear-gradient(90deg, rgba(203,227,250,1) 0%, rgba(110,193,255,1) 100%);
+    color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .icon-card .card-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon-card .card-logo img {
+    width: 80px;
+    height: auto;
+  }
+  
+  .images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+  }
+  
+  .icon-card ion-card-header {
+    margin: 10px 0;
+  }
+  
+  .icon-card ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .icon-card ion-card-subtitle {
+    font-size: 16px;
+    margin-top: 5px;
+    color: white;
+  }
+  
+  .icon-card .balance {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .icon-card .balance span {
+    font-size: 14px;
+  }
+  
+  .icon-card .balance h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .transaction-list {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+
+    .line-text {
+      padding: 2px;
+      margin-top: 10px;
+      position: relative;
+      height: 20px;
+
+      .lines {
+          height: 1px;
+          background: #858585;
+          display: block;
+      }
+      .text {
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 0 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #5e5e5e;
+    }
+
+    }
+  }
+
+  .transaction-list ion-list-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .transaction-list ion-item {
+    --padding-start: 5px;
+    --inner-padding-end: 5px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  // .transaction-list ion-item:last-child {
+  //   border-bottom: none;
+  // }
+  
+  .transaction-list ion-icon {
+    font-size: 24px;
+    color: #092044;
+  }
+  
+  .transaction-list ion-note {
+    font-size: 18px;
+    font-weight: bold;
+    color: #092044;
+  }
+  
+  .transaction-list ion-label h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .transaction-list ion-label p {
+    margin: 0;
+    font-size: 14px;
+    color: #8c8c8c;
+  }
+
+  .horizontal-card {
+    display: flex;
+    justify-content: center; /* Optional: Centers the content horizontally */
+  }
+  
+  .card-content-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Centers the content vertically */
+  }
+  
+  .card-image {
+    width: 25%; /* Adjust as needed */
+    height: auto;
+    margin: 20px;
+  }
+  
+  .card-text {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .buttonBeranda {
+    height: 100px; 
+    background-color: #fff; /* Warna latar belakang */
+    box-shadow: 0 0 0 3px; /* Efek outline */
+    border-radius: 10px; /* Adjust the border radius as needed */
+    transition: box-shadow 0.3s ease;
+  }
+span {
+  font-weight: bold;
+}

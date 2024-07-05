@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="person-add-outline"></ion-icon> Karyawan
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/o-tabs/beranda"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="tambahKaryawan()">
+        <ion-label>Tambah</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-list lines="full">
+    <ion-item *ngFor="let karyawan of karyawanList" class="karyawan-item">
+      <ion-label>
+        <h2 class="nama">Nama : {{ karyawan.nama }}</h2>
+        <p class="email">Email : {{ karyawan.email }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="danger" (click)="hapusKaryawan(karyawan.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+        <ion-button (click)="editKaryawan(karyawan.id)">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,120 @@
+<ion-app>
+  <!-- Side Menu -->
+  <ion-menu side="end" menuId="first" contentId="content">
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+    <ion-content class="menu-content">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="assets/image/logo100.png" alt="Logo" class="logo">
+        <p>Hello Owner !</p>
+        <ion-button expand="full" (click)="logout()">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+          Logout
+        </ion-button>
+      </div>
+      <!-- Logout Button -->
+    </ion-content>
+  </ion-menu>
+
+  <!-- Main Content -->
+  <ion-content id="content" [fullscreen]="true">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+    
+    <div class="box-info">
+      <ion-row>
+        <ion-col size-xl="3" size-md="6" class="mb-4">
+          <ion-card class="border-left-success shadow h-100 py-2" >
+            <ion-card-content>
+              <ion-row class="no-gutters align-items-center">
+                <ion-col class="mr-2">
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                    Pesanan (Hari Ini)
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 large-text">
+                    Total: {{ laporan?.jumlah_pesanan }}
+                  </div>
+                </ion-col>
+                <ion-col class="col-auto">
+                  <ion-icon name="cart-outline" class="large-icon text-gray-300"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xl="3" size-md="6" class="mb-4">
+          <ion-card class="border-left-warning shadow h-100 py-2">
+            <ion-card-content>
+              <ion-row class="no-gutters align-items-center">
+                <ion-col class="mr-2">
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                    Pendapatan
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 large-text">
+                    Total: Rp. {{ laporan?.total_pendapatan }}
+                  </div>
+                </ion-col>
+                <ion-col class="col-auto">
+                  <ion-icon name="cash-outline" class="large-icon text-gray-300"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-xl="3" size-md="6" class="mb-4">
+          <ion-card class="border-left-info shadow h-100 py-2">
+            <ion-card-content>
+              <ion-row class="no-gutters align-items-center">
+                <ion-col class="mr-2">
+                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                    Karyawan
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 large-text">
+                    Total: {{ jumlahKaryawan }}
+                  </div>
+                </ion-col>
+                <ion-col class="col-auto">
+                  <ion-icon name="people-outline" class="large-icon text-gray-300"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    <ion-list class="transaction-list">
+      <div class="line-text">
+        <span class="lines"></span>
+        <span class="text">Info Pesanan</span>
+      </div>
+      <ion-card class="recent-activities-card">
+        <ion-card-header>
+          <ion-card-title>Pesanan Selesai</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let order of pesananList">
+              <ion-label>
+                <h2>{{ order.pelanggan.nama }}</h2>
+                <p>Tanggal Pemesanan: {{ order.tanggal_pemesanan | date:'short' }}</p>
+                <p>Status: {{ order.status }}</p>
+                <p>Total Harga: Rp.{{ order.total_harga }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>   
+    </ion-list>     
+    </div>
+  </ion-content>
+</ion-app>

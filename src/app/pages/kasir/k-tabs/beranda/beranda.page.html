@@ -1,0 +1,83 @@
+<ion-content fullscreen>
+  <div class="header">
+    <div class="greeting">
+      <p>Selamat Datang</p>
+      <h1>LaundryIn</h1>
+    </div>
+    <div class="header-icons">
+      <img src="../../../../../assets/image/logo100.png" alt="Profile Picture" class="profile-picture"/>
+    </div>
+  </div>
+  <div class="content">
+    <!-- Card representing an Icon card -->
+    <ion-card class="icon-card">
+      <div class="card-logo">
+        <img src="../../../../../assets/image/logo100.png" alt="UBP Logo"/>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Kasir</ion-card-title>
+        <ion-card-subtitle>LaundryIn</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="balance">
+          <span>Karawang</span>
+          <h2>Cikampek</h2>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- Transactions List -->
+    <ion-list class="transaction-list">
+      <div class="line-text">
+        <span class="lines"></span>
+        <span class="text">Menu Kasir</span>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+              <ion-button class="buttonBeranda" expand="block" fill="clear" (click)="openOrderModal()">
+                <ion-icon style="margin-right: 3px;" name="add-circle-outline"></ion-icon>
+                <span>
+                  Tambah Transaksi
+                </span>
+              </ion-button>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button class="buttonBeranda" expand="block" fill="clear" (click)="goLayanan()">
+              <ion-icon style="margin-right: 3px;" name="shirt-outline"></ion-icon>
+              <span>
+                Layanan
+              </span>
+            </ion-button>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button class="buttonBeranda" expand="block" fill="clear" (click)="goLaporan()">
+              <ion-icon style="margin-right: 3px;" name="bar-chart-outline"></ion-icon>
+              <span>
+                Laporan
+              </span>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    
+    <!-- Recently Activities Section -->
+    <ion-card class="recent-activities-card">
+      <ion-card-header>
+        <ion-card-title>Aktivitas Terbaru</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let order of pesananList">
+            <ion-label>
+              <h2>{{ order.pelanggan.nama }}</h2>
+              <p>Tanggal Pemesanan: {{ order.tanggal_pemesanan | date:'short' }}</p>
+              <p>Status: {{ order.status }}</p>
+              <p>Total Harga: Rp.{{ order.total_harga }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

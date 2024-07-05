@@ -1,0 +1,23 @@
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-top: 50%;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .logout-button {
+    max-width: 200px;
+  }
+  

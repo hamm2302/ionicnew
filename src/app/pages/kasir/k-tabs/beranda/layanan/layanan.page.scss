@@ -1,0 +1,38 @@
+.container {
+    padding: 16px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .header ion-button {
+    margin-right: 8px;
+  }
+  
+  ion-grid {
+    --ion-grid-columns: 12;
+    width: 100%;
+  }
+  
+  ion-row {
+    background: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  ion-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+  
+  ion-pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  

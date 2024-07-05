@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/o-tabs/beranda"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="bar-chart-outline"></ion-icon>Laporan
+    </ion-title>
+  </ion-toolbar>
+  
+  <form (submit)="cariLaporan()">
+    <ion-item>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="tanggal" name="tanggal" required></ion-datetime>
+    </ion-item>
+    <ion-button style="margin-left: 20px; margin-right: 20px; border-radius: 10px;"expand="full" type="submit" color="primary">Cari Laporan</ion-button>
+  </form>
+
+  <ion-list *ngIf="laporanList.length > 0">
+    <ion-card *ngFor="let laporan of laporanList">
+      <ion-card-header>
+        <ion-card-title style="text-align: center;">
+        Tanggal {{ laporan.tanggal_transaksi }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="cart-outline" slot="start"></ion-icon>
+          <ion-label>Jumlah Pemesanan: {{ laporan.jumlah_pesanan }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cash-outline" slot="start"></ion-icon>
+          <ion-label>Jumlah Pendapatan: {{ laporan.total_pendapatan }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  
+  <ion-text *ngIf="laporanList.length === 0 && tanggal">
+    <p class="ion-text-center">Tidak ada laporan untuk tanggal ini.</p>
+  </ion-text>
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>

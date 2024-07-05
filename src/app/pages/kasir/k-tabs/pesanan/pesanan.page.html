@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/k-tabs/beranda"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="receipt-outline"></ion-icon> Pesanan
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" value="belum-diproses">
+    <ion-segment-button value="belum-diproses">
+      <ion-label>Belum Diproses</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="sudah-diproses">
+      <ion-label>Sudah Diproses</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="selectedSegment === 'belum-diproses' && pesananBelumDiproses.length > 0">
+    <ion-item *ngFor="let pesanan of pesananBelumDiproses">
+      <ion-label>
+        <h2>Layanan: {{ pesanan?.layanan?.nama }}</h2>
+        <p>Pelanggan: {{ pesanan?.pelanggan?.nama }}</p>
+        <p>Jumlah: {{ pesanan.jumlah }}</p>
+        <p>Tanggal Pemesanan: {{ pesanan.tanggal_pemesanan }}</p>
+        <p>Status: {{ pesanan.status }}</p>
+        <p>Total Harga: {{ pesanan.total_harga }}</p>
+      </ion-label>
+      <ion-button (click)="updatePesananStatus(pesanan.id)" slot="end">
+        Selesai
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-note *ngIf="selectedSegment === 'belum-diproses' && pesananBelumDiproses.length === 0">Tidak ada pesanan yang belum diproses.</ion-note>
+
+  <ion-list *ngIf="selectedSegment === 'sudah-diproses' && pesananSudahDiproses.length > 0">
+    <ion-item *ngFor="let pesanan of pesananSudahDiproses">
+      <ion-label>
+        <h2>Layanan: {{ pesanan?.layanan?.nama }}</h2>
+        <p>Pelanggan: {{ pesanan?.pelanggan?.nama }}</p>
+        <p>Jumlah: {{ pesanan.jumlah }}</p>
+        <p>Tanggal Pemesanan: {{ pesanan.tanggal_pemesanan }}</p>
+        <p>Status: {{ pesanan.status }}</p>
+        <p>Total Harga: {{ pesanan.total_harga }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-center">
+    <ion-note *ngIf="selectedSegment === 'sudah-diproses' && pesananSudahDiproses.length === 0">Tidak ada pesanan yang sudah diproses.</ion-note>
+  </div>
+</ion-content>

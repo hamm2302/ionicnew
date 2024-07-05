@@ -1,0 +1,28 @@
+<ion-content color="primary">
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" routerLink="/admin"></ion-icon>
+    </div>
+    <h1>Register</h1>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="person"></ion-icon>
+        <ion-input type="text" [(ngModel)]="form.nama" [ngModelOptions]="{standalone: true}" placeholder="Nama Lengkap"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <ion-input type="text" [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="lock-closed"></ion-icon>
+        <ion-input type="password" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}" placeholder="Password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="register()">Register</ion-button>
+    </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

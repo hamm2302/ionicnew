@@ -1,0 +1,54 @@
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" routerLink="/admin"></ion-icon>
+    </div>
+
+    <h1>Login</h1>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <h2>LaundryIn</h2>
+        <p>Silahkan Login</p>
+        <br />
+        <form [formGroup]="FormLogin" (ngSubmit)="login()">
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input
+              type="text"
+              formControlName="email"
+              placeholder="Email"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            ></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit">Login</ion-button>
+          <div style="margin-top: 15px;"class="ion-text-center">
+            <a routerLink="/register">Dont a have account? Register</a>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    
+
+    <!-- <ion-card class="socials-wrapper">
+      <ion-card-content>
+        <div class="socials">
+          <ion-button class="btn-go" fill="outline">
+            <ion-icon style="margin-right: 10px" name="logo-google"></ion-icon>
+            Google Account
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card> -->
+  </div>
+</ion-content>
